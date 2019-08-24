@@ -1,0 +1,4 @@
+#jumbo {
+    background: url(app/img/syte.png) 100% 100% no-repeat; /* Добавляем фон */
+    background-size: cover; /* Масштабируем фон */
+}

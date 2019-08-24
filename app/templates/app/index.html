@@ -1,0 +1,17 @@
+{% extends "app/base.html"%}
+
+{% block title %}Главная{% endblock %}
+
+
+{% block content %}
+{%for tls in tl%}
+<p>
+<h1 style="text-align: center">{{tls.title|safe}}</h1>
+</p>
+<p>
+<h3>{{tls.content|safe}}</h3>
+</p>
+<hr>
+
+{%endfor%}
+{% endblock %}
