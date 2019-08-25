@@ -9,8 +9,12 @@ class TLAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
 
 
-class SomeModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
+class SomeModelAdmin(SummernoteModelAdmin):
     summernote_fields = ('title', 'content')
+
+class RsModelAdmin(SummernoteModelAdmin):
+    summernote_fields = ('title', 'map','content')
 
 
 admin.site.register(TL, SomeModelAdmin)
+admin.site.register(Rs, RsModelAdmin)
