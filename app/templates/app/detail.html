@@ -1,0 +1,12 @@
+{% extends "app/base.html"%}
+
+{% block title %}{{route.title | safe}}{% endblock %}
+
+{% block content %}
+<h1 align="center"><strong>{{route.title}}</strong></h1>
+
+    <p>{{route.map | safe}}</p>
+
+    <p>{{route.content | safe}}</p>
+
+{% endblock %}

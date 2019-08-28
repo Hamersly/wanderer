@@ -3,5 +3,23 @@
 {% block title %}Маршруты{% endblock %}
 
 {% block content %}
-    <h1>Тут будут карточки с маршрутами</h1>
+<div class="container col-md-12 d-flex justify-content-center">
+    <h1><strong>Маршруты:</strong></h1>
+</div>
+<hr>
+<div class="d-flex flex-wrap align-content-around">
+{%for route in object_list %}
+
+
+<div class="col-md-4"  style="margin-bottom:25px;">
+
+<div class="card">
+    <div class="card-header">{{ route.title}}</div>
+  <div class="card-body">{{route.map | safe}}</div>
+  <div class="card-footer">Расстояние: {{ route.km }} Км</div>
+  <a href="{{ route.get_absolute_url }}" class="btn btn-primary">Перейти</a>
+</div>
+</div>
+{%endfor%}
+</div>
 {% endblock %}

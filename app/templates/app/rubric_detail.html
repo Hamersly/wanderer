@@ -1,0 +1,14 @@
+{% extends "app/rubrics.html"%}
+
+{% block title_outfit %}
+    Список статей
+{% endblock title_outfit %}
+
+{% block outfit %}
+
+<div class="list-group ">
+    {%for outfit in object_list %}
+<a href="{{ outfit.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-dark ">{{outfit.title}}</a>
+    {%endfor%}
+</div>
+{% endblock outfit %}

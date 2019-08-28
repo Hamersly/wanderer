@@ -1,0 +1,29 @@
+{% extends "app/base.html"%}
+
+{% block title %}
+{% block title_outfit %}
+    Рубрики
+{% endblock title_outfit %}
+{% endblock %}
+
+{% block content %}
+<div class="container" style="height:500px ">
+<div class="row">
+    <div class="col-md-4" style="margin-bottom:20px">
+
+        <div class="btn-group-vertical d-flex justify-content-center">
+            {%for rbs in rubrics%}
+                <a href="{%url 'rubrics_detail_url' rbs.pk%}" type="button" class="btn btn-primary">{{rbs.title}}</a>
+            {%endfor%}
+        </div>
+    </div>
+    <div class="container col-md-8" >
+
+        {% block outfit %}
+
+        {% endblock outfit%}
+
+    </div>
+</div>
+</div>
+{% endblock %}

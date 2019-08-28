@@ -3,18 +3,19 @@ from .models import *
 from django_summernote.admin import SummernoteModelAdmin
 
 
-class TLAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content')
-    list_display_links = ('title', 'content')
-    search_fields = ('title', 'content')
+class TlModelAdmin(SummernoteModelAdmin):
+    summernote_fields = ('title','content')
 
-
-class SomeModelAdmin(SummernoteModelAdmin):
-    summernote_fields = ('title', 'content')
 
 class RsModelAdmin(SummernoteModelAdmin):
-    summernote_fields = ('title', 'map','content')
+    summernote_fields = ('map', 'content')
 
 
-admin.site.register(TL, SomeModelAdmin)
+class OutfitModelAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content')
+
+
+admin.site.register(TL, TlModelAdmin)
 admin.site.register(Rs, RsModelAdmin)
+admin.site.register(Rubrics)
+admin.site.register(Outfit, OutfitModelAdmin)
